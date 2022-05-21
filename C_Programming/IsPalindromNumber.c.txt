@@ -1,0 +1,26 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int isPalindromNumber(int num) {
+    int PlaceHolderForNum = num, sum = 0;
+    while(num > 0) {
+        sum = (sum * 10) + (num%10);
+        num = num/10;
+    }
+    if (sum == PlaceHolderForNum)
+        return 1;
+    else 
+        return 0;
+}
+
+int main() {
+    // Write C code here
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    if(isPalindromNumber(num) == 1)
+        printf("\n%d is a Palindrom number\n", num);
+    else
+        printf("\n%d is not a Palindrom number\n", num);
+    return 0;
+}
